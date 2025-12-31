@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INSTITUT MiraLocks — Accueil</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<script src="js/translations.js"></script>
+
+<body>
+<div id="translateWidget" class="drag-translate">
+  <span id="flagIcon">🌍</span>
+  <div id="google_translate_element"></div>
+</div>
+
+<style>
+.drag-translate{
+ position:fixed;
+ bottom:20px;
+ left:20px;
+ background:#000;
+ padding:6px 8px;
+ border-radius:30px;
+ box-shadow:0 8px 18px rgba(0,0,0,.35);
+ z-index:999999;
+ border:1px solid #d4af37;
+ color:#fff;
+ font-size:18px;
+ cursor:grab;
+ user-select:none;
+ display:flex;
+ align-items:center;
+ gap:6px;
+}
+.drag-translate:active{
+ cursor:grabbing;
+}
+
+#google_translate_element select{
+ background:#111 !important;
+ color:#fff !important;
+ padding:3px 4px !important;
+ border-radius:10px !important;
+ border:1px solid #d4af37 !important;
+ font-size:11px !important;
+ width:90px !important;
+ max-width:90px !important;
+}
+
+</style>
+
+
+<!-- Splash Screen GOLD -->
+<div id="splash">
+  <h1 class="splash-title gold">MiraLocks</h1>
+  <button id="enterSite"><B>Bienvenue</B></button>
+ 
+  <audio id="introSound" preload="auto" autoplay>
+    <source src="assets/gold-intro.mp3" type="audio/mp3">
+  </audio>
+</div>
+
+
+ 
+
+<header class="header">
+  <div class="container">
+    <div class="brand bounce-in">
+      <img src="assets/logo.png" alt="MiraLocks Logo">
+      <div>
+        <h1>INSTITUT <span style="letter-spacing:2px">MiraLocks</span></h1>
+        <small style="color:var(--gold)">Style de Référence — Agoè Cacaveli, près de l'école La Source, en face du terrain</small>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html" data-fr="Accueil">Accueil</a>
+      <a href="about.html" data-fr="À propos">À propos</a>
+      <a href="services.html" data-fr="Services">Services</a>
+      <a href="gallery.html" data-fr="Galerie">Galerie</a>
+      <a href="rendezvous.html" data-fr="Rendez‑vous">Rendez‑vous</a>
+      <a href="contact.html" data-fr="Contact">Contact</a>
+    </nav>
+  </div>
+  </button>
+
+
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="intro">
+      <h2 data-fr="Bienvenue à INSTITUT MiraLocks">Bienvenue à INSTITUT MiraLocks</h2>
+      <p style="margin:10px 0 16px" data-fr="Salon spécialisé en coiffures locks — expertise, élégance et entretien professionnel à Lomé.">Salon spécialisé en coiffures locks — expertise, élégance et entretien professionnel à Lomé.</p>
+      <a class="cta" href="rendezvous.html" data-fr="Prendre un rendez‑vous">Prendre un rendez‑vous</a>
+      <p style="margin-top:12px" class="muted" data-fr="Ou contactez‑nous via WhatsApp pour une réponse rapide.">Ou contactez‑nous via WhatsApp pour une réponse rapide.</p>
+    </div>
+    <div style="max-width:420px">
+      <div class="card contact-card">
+        <h3 data-fr="Nos atouts">Nos atouts</h3>
+        <ul style="margin-top:8px">
+          <li data-fr="Styliste certifié en locks">Styliste certifié en locks</li>
+          <li data-fr="Produits naturels">Produits naturels</li>
+          <li data-fr="Entretien & réparation">Entretien & réparation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h3 style="margin-bottom:12px">Services populaires</h3>
+  <div class="services">
+    <div class="card"><h3>Création de locks</h3><p class="muted">Techniques variées — starter locs, instant locs.</p></div>
+    <div class="card"><h3>Entretien</h3><p class="muted">Retouches, nettoyage & maintenance.</p></div>
+    <div class="card"><h3>Réparation</h3><p class="muted">Réparation de locks cassés, renforcement.</p></div>
+    <div class="card"><h3>Coloration & fusion</h3><p class="muted">Colorations adaptées aux locks et extensions.</p></div>
+  </div>
+</section>
+
+<section class="container" style="margin-top:26px">
+  <h3 data-fr="Galerie">Galerie</h3>
+  <div class="gallery" style="margin-top:12px">
+    <img src="images/locks1.jpg" alt="ex1" style="width:100%;border-radius:8px">
+    <img src="images/locks2.jpg" alt="ex2" style="width:100%;border-radius:8px">
+    <img src="images/locks3.jpg" alt="ex3" style="width:100%;border-radius:8px">
+    <img src="images/locks4.jpg" alt="ex4" style="width:100%;border-radius:8px">
+    <img src="images/locks5.jpg" alt="ex4" style="width:100%;border-radius:8px">
+    <video controls style="width:100%;border: radius 60px;margin: top 26px">
+      <source src="video/locks5.mp4" type="video/mp4">
+    </video>
+    <video controls style="width:100%;border-radius:8px;margin-top:12px">
+      <source src="video/locks6.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos.
+    </video>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div>
+      <h3 style="color:var(--white)">INSTITUT MiraLocks</h3>
+      <small class="muted" data-fr="Coiffure - Entretien de locks • Agoè Cacaveli, près de l'école La Source, en face du terrain">Coiffure - Entretien de locks • Agoè Cacaveli, près de l'école La Source, en face du terrain</small>
+      <p style="margin-top:12px" data-fr="© 2025 MiraLocks. Tous droits réservés.">© 2025 MiraLocks. Tous droits réservés.</p>
+    </div>
+    <div>
+      <h4 style="color:var(--white)" data-fr="Contact">Contact</h4>
+      <p style="margin-top:8px" data-fr="Téléphone: +228 97 98 90 01<br>WhatsApp: +228 97 98 90 01<br>Adresse: Agoè Cacaveli, près de l'école La Source, en face du terrain">Téléphone: +228 97 98 90 01<br>WhatsApp: +228 97 98 90 01<br>Adresse: Agoè Cacaveli, près de l'école La Source, en face du terrain</p>
+    </div>
+  </div>
+</footer>
+
+
+<a class="whatsapp-float" href="https://wa.me/22897989001?text=Bonjour%20MiraLocks%20%F0%9F%91%8B" target="_blank">WhatsApp</a>
+
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'fr',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      },
+      'google_translate_element'
+    );
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const widget = document.getElementById("translateWidget");
+    const flag = document.getElementById("flagIcon");
+    let offsetX = 0, offsetY = 0, moving = false;
+
+    // Restore position
+    const saved = localStorage.getItem("translatePosition");
+    if(saved){
+      const p = JSON.parse(saved);
+      widget.style.left = p.x + "px";
+      widget.style.top = p.y + "px";
+      widget.style.bottom = "auto";
+    }
+
+    function savePosition(){
+      localStorage.setItem("translatePosition", JSON.stringify({
+        x: widget.offsetLeft,
+        y: widget.offsetTop
+      }));
+    }
+
+    // ---- Desktop Drag ----
+    widget.addEventListener("mousedown", (e)=>{
+      if(e.target.tagName === "SELECT") return;
+      moving = true;
+      offsetX = e.clientX - widget.offsetLeft;
+      offsetY = e.clientY - widget.offsetTop;
+      document.addEventListener("mousemove", drag);
+    });
+
+    document.addEventListener("mouseup", ()=>{
+      if(moving){
+        moving = false;
+        document.removeEventListener("mousemove", drag);
+        savePosition();
+      }
+    });
+
+    function drag(e){
+      if(!moving) return;
+      widget.style.left = (e.clientX - offsetX) + "px";
+      widget.style.top = (e.clientY - offsetY) + "px";
+    }
+
+    // ---- Mobile Drag ----
+    widget.addEventListener("touchstart",(e)=>{
+      const t = e.touches[0];
+      offsetX = t.clientX - widget.offsetLeft;
+      offsetY = t.clientY - widget.offsetTop;
+    });
+
+    widget.addEventListener("touchmove",(e)=>{
+      const t = e.touches[0];
+      widget.style.left = (t.clientX - offsetX) + "px";
+      widget.style.top = (t.clientY - offsetY) + "px";
+    });
+
+    widget.addEventListener("touchend", savePosition);
+
+    // ====== FLAG CHANGE ON LANGUAGE CHANGE ======
+    function updateFlag(){
+      const select = document.querySelector(".goog-te-combo");
+      if(!select) return;
+      const lang = select.value;
+
+      const flags = {
+        fr: "🇫🇷", en: "🇬🇧", es: "🇪🇸", de: "🇩🇪", it: "🇮🇹",
+        pt: "🇵🇹", ar: "🇸🇦", zh: "🇨🇳", ja: "🇯🇵",
+        ko: "🇰🇷", ru: "🇷🇺", tr: "🇹🇷"
+      };
+
+      flag.textContent = flags[lang] || "🌍";
+    }
+
+    // watch language change
+    setInterval(updateFlag, 800);
+  });
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

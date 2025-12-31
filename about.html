@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>À propos — MiraLocks</title><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+<div id="translateWidget" class="drag-translate">
+  <span id="flagIcon">🌍</span>
+  <div id="google_translate_element"></div>
+</div>
+
+<style>
+.drag-translate{
+ position:fixed;
+ bottom:20px;
+ left:20px;
+ background:#000;
+ padding:6px 8px;
+ border-radius:30px;
+ box-shadow:0 8px 18px rgba(0,0,0,.35);
+ z-index:999999;
+ border:1px solid #d4af37;
+ color:#fff;
+ font-size:18px;
+ cursor:grab;
+ user-select:none;
+ display:flex;
+ align-items:center;
+ gap:6px;
+}
+.drag-translate:active{
+ cursor:grabbing;
+}
+
+#google_translate_element select{
+ background:#111 !important;
+ color:#fff !important;
+ padding:3px 4px !important;
+ border-radius:10px !important;
+ border:1px solid #d4af37 !important;
+ font-size:11px !important;
+ width:90px !important;
+ max-width:90px !important;
+}
+
+</style>
+
+
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="assets/logo.png" alt="MiraLocks Logo">
+      <div>
+        <h1>INSTITUT <span style="letter-spacing:2px">MiraLocks</span></h1>
+        <small style="color:var(--gold)">Style de Référence — Agoè Cacaveli, près de l'école La Source, en face du terrain</small>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="rendezvous.html">Rendez‑vous</a>
+      <a href="">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container" style="padding-top:28px">
+  <h2 data-fr="À propos de l'institut">À propos de l'institut</h2>
+  <p style="margin-top:12px" data-fr="INSTITUT MiraLocks est un salon situé à Lomé, spécialisé dans la création, l'entretien et la réparation de locks. Fondé par des stylistes passionnés, notre objectif est de fournir un service chaleureux, professionnel et durable.">INSTITUT MiraLocks est un salon situé à Lomé, spécialisé dans la création, l'entretien et la réparation de locks. Fondé par des stylistes passionnés, notre objectif est de fournir un service chaleureux, professionnel et durable.</p>
+  <h3 style="margin-top:18px" data-fr="Notre mission">Notre mission</h3>
+  <p class="muted" style="margin-top:8px" data-fr="Valoriser les cheveux naturels, offrir des soins adaptés et accompagner chaque client vers un style de référence.">Valoriser les cheveux naturels, offrir des soins adaptés et accompagner chaque client vers un style de référence.</p>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div>
+      <h3 style="color:var(--white)">INSTITUT MiraLocks</h3>
+      <small class="muted">Coiffure - Entretien de locks • Agoè Cacaveli, près de l'école La Source, en face du terrain</small>
+      <p style="margin-top:12px">© 2025 MiraLocks. Tous droits réservés.</p>
+    </div>
+    <div>
+      <h4 style="color:var(--white)">Contact</h4>
+      <p style="margin-top:8px">Téléphone: +228 97 98 90 01<br>WhatsApp: +228 97 98 90 01<br>Adresse: Agoè Cacaveli, près de l'école La Source, en face du terrain</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/22890000000?text=Bonjour%20MiraLocks" target="_blank">WhatsApp</a>
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'fr',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      },
+      'google_translate_element'
+    );
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const widget = document.getElementById("translateWidget");
+    const flag = document.getElementById("flagIcon");
+    let offsetX = 0, offsetY = 0, moving = false;
+
+    // Restore position
+    const saved = localStorage.getItem("translatePosition");
+    if(saved){
+      const p = JSON.parse(saved);
+      widget.style.left = p.x + "px";
+      widget.style.top = p.y + "px";
+      widget.style.bottom = "auto";
+    }
+
+    function savePosition(){
+      localStorage.setItem("translatePosition", JSON.stringify({
+        x: widget.offsetLeft,
+        y: widget.offsetTop
+      }));
+    }
+
+    // ---- Desktop Drag ----
+    widget.addEventListener("mousedown", (e)=>{
+      if(e.target.tagName === "SELECT") return;
+      moving = true;
+      offsetX = e.clientX - widget.offsetLeft;
+      offsetY = e.clientY - widget.offsetTop;
+      document.addEventListener("mousemove", drag);
+    });
+
+    document.addEventListener("mouseup", ()=>{
+      if(moving){
+        moving = false;
+        document.removeEventListener("mousemove", drag);
+        savePosition();
+      }
+    });
+
+    function drag(e){
+      if(!moving) return;
+      widget.style.left = (e.clientX - offsetX) + "px";
+      widget.style.top = (e.clientY - offsetY) + "px";
+    }
+
+    // ---- Mobile Drag ----
+    widget.addEventListener("touchstart",(e)=>{
+      const t = e.touches[0];
+      offsetX = t.clientX - widget.offsetLeft;
+      offsetY = t.clientY - widget.offsetTop;
+    });
+
+    widget.addEventListener("touchmove",(e)=>{
+      const t = e.touches[0];
+      widget.style.left = (t.clientX - offsetX) + "px";
+      widget.style.top = (t.clientY - offsetY) + "px";
+    });
+
+    widget.addEventListener("touchend", savePosition);
+
+    // ====== FLAG CHANGE ON LANGUAGE CHANGE ======
+    function updateFlag(){
+      const select = document.querySelector(".goog-te-combo");
+      if(!select) return;
+      const lang = select.value;
+
+      const flags = {
+        fr: "🇫🇷", en: "🇬🇧", es: "🇪🇸", de: "🇩🇪", it: "🇮🇹",
+        pt: "🇵🇹", ar: "🇸🇦", zh: "🇨🇳", ja: "🇯🇵",
+        ko: "🇰🇷", ru: "🇷🇺", tr: "🇹🇷"
+      };
+
+      flag.textContent = flags[lang] || "🌍";
+    }
+
+    // watch language change
+    setInterval(updateFlag, 800);
+  });
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

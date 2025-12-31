@@ -1,0 +1,254 @@
+/* styles.css - Institut MiraLocks */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#d4af37;
+  --black:#000;
+  --white:#fff;
+  --accent:var(--gold);
+  --muted:#666;
+  --max-width:1100px;
+}
+body{font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif; color:var(--black); background:#fafafa; line-height:1.5}
+.container{max-width:var(--max-width);margin:0 auto;padding:24px}
+.header{background:var(--black);color:var(--white);padding:28px 0;position:relative}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{height:72px;width:auto;border-radius:8px;background:var(--white);padding:8px}
+.brand h1{font-family: 'Georgia', serif;font-size:28px;letter-spacing:1px}
+nav a{color:var(--white);text-decoration:none;margin-left:18px;font-weight:600}
+.hero{background:linear-gradient(90deg, rgba(0,0,0,0.05), rgba(0,0,0,0));padding:48px 0}
+.hero-inner{display:flex;gap:28px;align-items:center}
+.hero .intro{flex:1}
+.hero h2{font-size:36px;margin-bottom:12px;font-family:'Georgia',serif}
+.cta{display:inline-block;background:var(--accent);color:var(--black);padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
+.services{padding:36px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--white);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.03)}
+.card h3{margin-bottom:8px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gallery img, .gallery video{transition:transform 0.3s ease}
+.gallery img:hover, .gallery video:hover{transform:scale(1.05)}
+.footer{background:#111;color:#ddd;padding:28px 0;margin-top:28px}
+.footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.contact-card{background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.06)}
+
+/* WhatsApp floating button */
+.whatsapp-float{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#000;padding:14px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,0.2);display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700}
+
+/* Responsive */
+@media (max-width:800px){
+  .header .container{flex-direction:column;gap:12px;align-items:flex-start}
+  .hero-inner{flex-direction:column;align-items:flex-start}
+  .brand img{height:56px}
+}
+small.muted{color:var(--muted);display:block;margin-top:8px}
+.form-row{display:flex;gap:10px;margin-bottom:10px}
+.form-row .col{flex:1}
+input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+button.primary{background:var(--accent);border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer}
+.map-embed{width:100%;height:300px;border-radius:10px;border:0}
+.header .brand h1 small{display:block;font-size:12px;color:var(--gold);}
+.lang-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    background: #fff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.slide-left {
+    opacity: 0;
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.slide-right {
+    opacity: 0;
+    animation: slideInRight 0.8s ease forwards;
+}
+
+.bounce-in {
+    opacity: 0;
+    animation: bounceIn 1s ease forwards;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ===== SPLASH SCREEN GOLD LUXURY ===== */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: splashFadeOut 5.5s ease forwards;
+}
+
+/* Texte OR */
+.splash-title.gold {
+  font-size: 72px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    120deg,
+    #7a5c1b,
+    #d4af37,
+    #fff1a8,
+    #d4af37,
+    #7a5c1b
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    goldReveal 4.5s ease forwards,
+    goldShine 2s ease-in-out infinite;
+}
+
+/* Apparition */
+@keyframes goldReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+    letter-spacing: 40px;
+    filter: blur(14px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(1);
+    letter-spacing: 12px;
+  }
+}
+
+/* Brillance or */
+@keyframes goldShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Disparition écran */
+@keyframes splashFadeOut {
+  0% { opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#audioStart {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: auto;
+}
+
+#enterSite {
+  margin-top: 40px;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(120deg, #d4af37, #fff1a8, #d4af37);
+  color: #000;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+#enterSite:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(212,175,55,0.5);
+}
